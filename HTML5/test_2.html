@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Corner</title>
+    <style>
+      /* Header 스타일 */
+      header {
+        background-color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+      }
+      /* 로고 스타일 */
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+      .logo img {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+      }
+      .logo span {
+        font-size: 24px;
+        font-family: sans-serif;
+        color: white;
+      }
+      /* 메뉴 버튼 스타일 */
+      .menu-button {
+        width: 30px;
+        height: 30px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+      .menu-button:focus-visible {
+        box-shadow: 0 0 0 2px white;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header 영역 -->
+    <header>
+      <div class="logo">
+        <img src="logo.png" alt="Logo">
+        <span>CORNER</span>
+      </div>
+      <button class="menu-button">
+        <svg viewBox="0 0 30 30">
+          <line x1="5" y1="7.5" x2="25" y2="7.5" stroke="white" stroke-width="2"/>
+          <line x1="5" y1="15" x2="25" y2="15" stroke="white" stroke-width="2"/>
+          <line x1="5" y1="22.5" x2="25" y2="22.5" stroke="white" stroke-width="2"/>
+        </svg>
+      </button>
+    </header>
+  </body>
+</html>

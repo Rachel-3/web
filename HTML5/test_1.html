@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>웹 홈페이지</title>
+  <style>
+    /* 로그인 버튼 스타일 */
+    .button {
+      background-color: blue;
+      color: red;
+      border-radius: 50%;
+      padding: 20px 30px;
+      font-size: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+    /* 헤더 스타일 */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+    
+    /* 로고 이미지 스타일 */
+    header .logo {
+      width: 100px;
+      cursor: pointer;
+    }
+    
+    /* 메뉴바 스타일 */
+    header .menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+    }
+    
+    /* 메뉴바 아이템 간 간격 조정 */
+    header .menu > * {
+      margin-right: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 헤더 -->
+  <header>
+    <!-- 로고 이미지 -->
+    <img class="logo" src="logo.png" alt="로고">
+    
+    <!-- 메뉴바 -->
+    <nav class="menu">
+      <a href="#">기타</a>
+      <a href="#">가격</a>
+      <a href="#">프로젝트</a>
+      <a href="#">안녕</a>
+    </nav>
+  </header>
+  
+  <!-- 로그인 버튼 -->
+  <button class="button">로그인</button>
+</body>
+</html>
