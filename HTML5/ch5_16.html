@@ -2,41 +2,78 @@
 <html>
     <head>
         <style>
-            #parent { 
-                background: gray; 
-                width: 200px; 
-                height:50px; 
-                position : relative; 
-            } 
-
-            #child {    
+            ul { 
                 background: lightgray; 
-                width:150px; 
-                height: 40px; 
-                position: absolute; 
-                top: 40px; 
-                left: 10px; 
+                padding: 6px; 
             } 
-            .menu { 
-                background: lightgray; 
-                width:150px; 
-                height: 40px; 
-                text-align: center; 
-                line-height: 40px;
+            li { 
+                display: inline; 
+                padding: 10px 20px; 
+            }
+            li a {
+                padding: 5px 10px;  
+                color: black; 
+                text-decoration: none;  } 
+            li a:hover { 
+                background: darkgray; 
+            }
+            li.dropdown { 
+                display: inline-block; 
+            }
+            .dropdown-content { 
+                display: none; 
+                position: absolute;
+                background: ghostwhite; 
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); }
+            .dropdown-content a { 
+                display: block; 
+                padding: 12px 16px;
+                text-decoration: none; 
+                text-align: left; 
+                color: black; 
+            }
+            .dropdown-content a:hover { 
+                background: lavender; 
             } 
-            #child .menu:hover { background: skyblue; } 
-            
+            .dropdown:hover .dropdown-content { 
+                display: block; 
+            }
         </style>
     </head>
 
-    <body>
-        <div id="parent" > 
-            <div style="text-align: center; padding: 10px;">메뉴항목</div> 
-            <div id="child">
-            <div class="menu">윤채림 서브메뉴1</div> 
-            <div class="menu">서브메뉴2</div> 
-            <div class="menu">서브메뉴3</div> 
-            </div> 
+  <body>
+    <h3>HTML5 웹 프로그래밍</h3><hr>
+    <ul>
+        <li class="dropdown">
+            <a href="#home">Home</a>
+        </li>
+        <li class="dropdown">
+            <a href="">Menu 1</a>
+            <div class="dropdown-content">
+                <a href="#">menu 11</a>
+                <a href="#">menu 12</a>
+                <a href="#">menu 13</a>
             </div>
+        </li>
+        <li class="dropdown">
+            <a href="">Menu 2</a>
+            <div class="dropdown-content">
+                <a href="#">menu 21</a>
+                <a href="#">menu 22</a>
+                <a href="#">menu 23</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="">Menu 3</a>
+            <div class="dropdown-content">
+                <a href="#">menu 31</a>
+                <a href="#">menu 32</a>
+                <a href="#">menu 33</a>
+            </div>
+        </li>
+    </ul>
+    <div style="height: auto;">
+        <pre>메뉴 내용을 나타내는 부분 입니다.</pre>
+    </div>
     </body>
 </html>
