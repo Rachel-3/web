@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>윤채림실습</title>
+        
+    </head>
+
+    <body>
+        <h3> 윤채림 typeof 연산자 </h3> <hr> 
+        <script>
+            document.write(typeof "John" + '<br>'); // 문자열
+            document.write(typeof 3.14 + '<br>'); // 실수
+            document.write(typeof NaN + '<br>'); // NaN
+            document.write(typeof false + '<br>'); // 논리형
+            document.write(typeof [1,2,3,4] + '<br>'); // 배열
+            document.write(typeof function () {} + '<br>'); // 함수
+            document.write(typeof myCar + '<br>'); // 정의되지 않은 변수
+            document.write(typeof null); // null 
+        </script>
+        <hr><hr><hr>
+        <h3> 자동 형변환 </h3> <hr> 
+        <script> 
+            document.write((7 + null) + '<br>'); 
+            document.write(("7" + null) + '<br>');
+            document.write(("7" + 2) + '<br>'); 
+            document.write((2 + "7" ) + '<br>'); 
+            document.write(("7" - 2) + '<br>'); 
+            document.write((2 - "7") + '<br>'); 
+            document.write(("7" * "2") + '<br>'); 
+            document.write(("7" / "2") + '<br>'); 
+            document.write(("abc" - 2) + '<br>'); 
+            document.write(("abc" * 2) + '<br>'); 
+            document.write(("abc" / 2) + '<br>'); 
+        </script>
+    </body>
+</html>
