@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>윤채림실습</title>
+        <script> 
+            var txt = "마우스가 전구 위에 있으면 켜지고, 벗어나면 꺼집니다."; 
+            var answer = confirm("어두워졌습니다. 전구를 켤까요 ?");
+            if (answer == true) { 
+                document.write("<h3>전구 상태 : On</h3>"); 
+                document.write("<img src='./image/icon2.png' />"); 
+            } else { 
+                document.write("<h3>전구 상태 : Off<h3>"); 
+                document.write("<img src='./image/icon1.png' />"); 
+            } 
+        </script> 
+        <style>
+            img { 
+                width: 200px; 
+                height: 200px; 
+                float : left;
+            }
+        </style>
+    </head>
+
+    <body>
+        <img src="./image/icon2.png" onmouseover="this.src='./image/icon1.png';" onmouseleave="this.src='./image/icon2.png';" /><br>
+        <button onclick="alert(txt)"> 윤채림 전구 on/off 방법</button>
+    </body>
+</html>

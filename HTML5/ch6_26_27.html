@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>윤채림실습</title>
+        <script> <!-- 6.26은 꼭 한번 해보라구,,, -->
+            var score;
+            var grade; 
+            var choice = 2;
+            document.write("<h3> 학점판정 </h3>"); 
+            score = prompt("윤채림 성적을 입력하세요"); 
+            switch (parseInt(score/10)) {
+                case 10, 9: grade="A"; break; 
+                case 8: grade="B"; break; 
+                case 7: grade="C"; break; 
+                case 6: grade="D"; break; 
+                default: grade="F"; 
+            } 
+            document.write("<hr>윤채림 학점판정 결과 : "); 
+            document.write(score + " (" + grade + ")"); 
+            switch (choice) {
+                case 0: document.write("HTML5 <br>"); break;
+                case 1: document.write("CSS3 <br>"); break;
+                case 2: document.write("Javascript <br>"); break;
+                default: document.write("Web Page <br>");
+            }
+            switch (choice) {
+                case 0: document.write("HTML5 <br>");
+                case 1: document.write("CSS3 <br>"); 
+                case 2: document.write("Javascript <br>");
+                default: document.write("Web Page <br>");
+            }
+            switch (choice) {
+                case 2: document.write("Javascript <br>"); 
+                default: document.write("Web Page <br>");
+                case 1: document.write("CSS3 <br>"); 
+                case 0: document.write("HTML5 <br>"); 
+            }
+        </script> 
+        <style>
+            
+        </style>
+    </head>
+
+    <body>
+       
+    </body>
+</html>
