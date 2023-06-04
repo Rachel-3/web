@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>윤채림 홈페이지</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            padding-bottom: 60px;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        #content {
+            min-height: calc(100vh - 40px - 60px);
+            overflow: auto;
+            padding-bottom: 60px;
+            margin-left: 30px;
+            margin-top: 50px;
+        }
+
+        .schedule {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+        }
+
+        .schedule .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .schedule table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .schedule caption {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .schedule td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        .schedule .close-btn:hover {
+            color: #ff0000;
+        }
+
+        .gnb {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #7700ff;
+            box-shadow: 2px 2px 5px #a0a0a0, 0 0 17px #a0a0a0, 0 0 10px #a0a0a0;
+            z-index: 9999;
+        }
+
+        .gnb li {
+            display: inline-block;
+        }
+
+        .gnb li a {
+            display: block;
+            padding: 20px 40px;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .gnb li:hover {
+            background: #5e00ca;
+        }
+
+        .dapth1 {
+            position: absolute;
+            display: inline-block;
+            width: 200px;
+            text-align: center;
+            background: #ccc;
+            display: none;
+
+        }
+
+        .dapth2 {
+            position: absolute;
+            display: inline-block;
+            width: 200px;
+            text-align: center;
+            background: #ccc;
+            display: none;
+        }
+
+        .dapth3 {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            display: inline-block;
+            width: 200px;
+            margin-top: -1px;
+            text-align: center;
+            background: #ccc;
+            display: none;
+        }
+
+        .dapth4 {
+            position: absolute;
+            display: inline-block;
+            width: 200px;
+            text-align: center;
+            background: #ccc;
+            display: none;
+        }
+
+        .dapth1 li {
+            border-top: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+            width: 200px;
+        }
+
+        .dapth2 li {
+            border-top: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+            width: 200px;
+        }
+
+        .dapth1 li:hover {
+            background: #777;
+            width: 200px
+        }
+
+        .dapth2 li:hover {
+            background: #777;
+            width: 200px
+        }
+
+        .dapth3 li:hover {
+            background: #777;
+            width: 200px
+        }
+
+        .dapth4 li:hover {
+            background: #777;
+            width: 200px
+        }
+
+        .gnb2:hover .dapth1 {
+            display: block;
+        }
+
+        .gnb3:hover .dapth2 {
+            display: block;
+        }
+
+        .gnb4:hover .dapth4 {
+            display: block;
+        }
+
+        .web:hover .dapth3 {
+            display: block;
+        }
+
+        .dapth1>li {
+            position: relative;
+        }
+
+        .dapth1>li:hover .dapth3 {
+            display: block;
+        }
+
+        #thing {
+            width: 32px;
+            height: 32px;
+            border-radius: 16px;
+            background: tomato;
+        }
+
+        html,
+        body {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+            min-height: 100%;
+        }
+
+        body {
+            padding-top: 40px;
+        }
+
+        .skrollable {
+            position: fixed;
+            z-index: 100;
+        }
+
+        .skrollr-mobile .skrollable {
+            position: absolute;
+        }
+
+        .skrollable .skrollable {
+            position: absolute;
+        }
+
+        .skrollable .skrollable .skrollable {
+            position: static;
+        }
+        
+        .button {
+            position: fixed;
+            background-color: #7700ff;
+            color: #fff;
+            font-weight: 600;
+            bottom: 50%;
+            right: 5%;
+            transform: translate(50%, 50%);
+            padding: 12px;
+            text-align: center;
+            height: 85px;
+            width: 50px;
+            border-radius: 8%;
+            box-shadow: 1px 1px 3px #b5b5b5, 0 0 10px #b5b5b5, 0 0 10px #b5b5b5;
+            
+        }
+
+        .button li {
+            margin: 10px 0;
+            margin-top: 0px;
+        }
+
+
+
+        
+
+        .footer-container {
+            position: fixed;
+            bottom: 0;
+            background-color: #F2F2F2;
+            padding: 25px;
+            text-align: center;
+            width: 100%;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var schoolMenu = document.querySelector(".dapth4");
+            var scheduleTable = document.querySelector(".schedule");
+            var closeBtn = document.querySelector(".schedule .close-btn");
+
+            schoolMenu.addEventListener("click", function (event) {
+                event.preventDefault();
+                scheduleTable.style.display = "block";
+            });
+
+            closeBtn.addEventListener("click", function () {
+                scheduleTable.style.display = "none";
+            });
+        };
+
+        window.addEventListener('scroll', function () {
+            var footer = document.querySelector('.footer-container');
+            var content = document.getElementById('content');
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            var documentHeight = Math.max(
+                document.body.scrollHeight, document.documentElement.scrollHeight,
+                document.body.offsetHeight, document.documentElement.offsetHeight,
+                document.body.clientHeight, document.documentElement.clientHeight
+            );
+
+            if (scrollTop + windowHeight >= documentHeight) {
+                footer.style.display = 'block';
+                content.style.paddingBottom = '85px'; // Adjust padding to accommodate the footer
+            } else {
+                footer.style.display = 'none';
+                content.style.paddingBottom = '0';
+            }
+        });
+
+        window.onload = function() {
+        var button1 = document.querySelector('.button1');
+        var button2 = document.querySelector('.button2');
+        var button3 = document.querySelector('.button3');
+
+        button1.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        button2.addEventListener('click', function() {
+            var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            var scrollToPosition = 10829 / 2;
+            window.scrollTo({ top: scrollToPosition, behavior: 'smooth' });
+        });
+
+        button3.addEventListener('click', function() {
+            var documentHeight = Math.max(
+            document.body.scrollHeight, document.documentElement.scrollHeight,
+            document.body.offsetHeight, document.documentElement.offsetHeight,
+            document.body.clientHeight, document.documentElement.clientHeight
+            );
+            window.scrollTo({ top: documentHeight, behavior: 'smooth' });
+        });
+        };
+
+    </script>
+</head>
+
+<body bgcolor="#dadeeb">
+
+    <ul class="gnb">
+        <li class="gnb1"><a href="">Home</a></li>
+        <li class="gnb2"><a href="">Tutorials</a>
+            <ul class="dapth1">
+                <li><a href="">Photo</a></li>
+                <li><a href="">Illustrator</a></li>
+                <li class="web"><a href="">Web Design</a>
+                    <ul class="dapth3">
+                        <li><a href="">HTML</a></li>
+                        <li><a href="">CSS</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="gnb3"><a href="">Articles</a>
+            <ul class="dapth2">
+                <li><a href="">Web Design</a></li>
+                <li><a href="">User Experience</a></li>
+            </ul>
+        </li>
+        <li class="gnb4"><a href="">School</a>
+            <ul class="dapth4">
+                <li><a href="">Schedule</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <div id="content">
+        <h1>Welcome to Rachel's Website!</h1>
+        <p>This is a sample website for demonstration purposes.</p>
+    </div>
+
+    <ul class="button">
+        <li class="button1">0%</li>
+        <li class="button2">50%</li>
+        <li class="button3">100%</li>
+    </ul>
+
+    <div id="thing" data-0="left[cos]:10%;top[sin]:10%;" data-10000="left:90%;top:90%;"></div>
+
+    <div class="schedule">
+        <span class="close-btn">X</span>
+        <table border="1">
+            <caption>수업 시간표</caption>
+            <tr>
+                <td>시 간</td>
+                <td>월요일</td>
+                <td>화요일</td>
+                <td>수요일</td>
+                <td>목요일</td>
+            </tr>
+            <tr>
+                <td>1교시</td>
+                <td>국어</td>
+                <td>역사</td>
+                <td>사회</td>
+                <td>영어</td>
+            </tr>
+            <tr>
+                <td>2교시</td>
+                <td>영어</td>
+                <td>미술</td>
+                <td>국어</td>
+                <td>수학</td>
+            </tr>
+            <tr>
+                <td>3교시</td>
+                <td>수학</td>
+                <td>국어</td>
+                <td>수학</td>
+                <td>과학</td>
+            </tr>
+            <tr>
+                <td>4교시</td>
+                <td>과학</td>
+                <td>체육</td>
+                <td></td>
+                <td>사회</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="footer-container">
+        <footer>
+            <p>&copy; 2023 Rachel's Portfolio. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+    <script type="text/javascript">
+        skrollr.init({
+            easing: {
+                sin: function (p) {
+                    return (Math.sin(p * Math.PI * 2 - Math.PI / 2) + 1) / 2;
+                },
+                cos: function (p) {
+                    return (Math.cos(p * Math.PI * 2 - Math.PI / 2) + 1) / 2;
+                },
+            },
+        });
+    </script>
+
+    
+
+</body>
+
+</html>

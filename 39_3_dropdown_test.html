@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        
+        *{margin: 0; padding: 0;}
+        li {list-style: none;}
+        a {text-decoration: none;}
+        
+        .gnb {
+            position: relative;
+            top: 100px;
+            left: calc(50% - 293px);
+            display: inline-block;
+            background: tomato;
+            box-shadow: 2px 2px 5px #a0a0a0, 0 0 17px #a0a0a0, 0 0 10px #a0a0a0;
+        }
+        
+        .gnb li { 
+            display: inline-block; 
+        }
+        
+        .gnb li a {
+            display: block;
+            padding: 20px 40px;
+            color: #fff;
+            font-weight: 700;
+        }
+        
+        .gnb li:hover {
+            background: red;
+        }
+        
+        .dapth1 {
+            position: absolute;
+            display: inline-block;
+            width: 200px;
+            text-align: center;
+            background: #ccc;
+            display: none;
+    
+        }
+        .dapth2 {
+            position: absolute;
+            display: inline-block;
+            width: 200px;
+            text-align: center;
+            background: #ccc;
+            display: none;
+        }
+        .dapth3 {
+            position: absolute;
+            top: 0;
+            left: 100%; 
+            display: inline-block;
+            width: 200px;
+            text-align: center;
+            background: #ccc;
+            display: none;
+        }
+        .dapth1 li {
+            border-top: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+            width: 200px;
+        }
+        .dapth2 li {
+            border-top: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+            width: 200px;
+        }
+        .dapth1 li:hover {
+            background: #777;
+            width: 200px
+        }
+        .dapth2 li:hover {
+            background: #777;
+            width: 200px
+        }
+        .dapth3 li:hover {
+            background: #777;
+            width: 200px
+        }
+
+        .gnb2:hover .dapth1 {
+            display: block;
+        }
+        
+        .gnb3:hover .dapth2 {
+            display: block;
+        }
+        
+        .web:hover .dapth3 {
+            display: block;
+        }
+    
+        
+        .dapth1>li {
+            position: relative;
+        }
+        .dapth1>li:hover .dapth3 {
+            display: block; 
+        }
+        
+    </style>
+</head>
+<body bgcolor="#dadeeb">
+    
+    <ul class="gnb">
+        <li class="gnb1"><a href="">Home</a></li>
+        <li class="gnb2"><a href="">Tutorials</a>
+            <ul class="dapth1">
+                <li><a href="">Photo</a></li>
+                <li><a href="">Illustrator</a></li>
+                <li class="web"><a href="">Web Design</a>
+                    <ul class="dapth3">
+                        <li><a href="">HTML</a></li>
+                          <li><a href="">CSS</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="gnb3"><a href="">Articles</a>
+            <ul class="dapth2">
+                <li><a href="">Web Design</a></li>
+                <li><a href="">User Experience</a></li>
+            </ul>
+        </li>
+        <li class="gnb4"><a href="">Inspiration</a></li>
+    </ul>
+    
+</body>
+</html>

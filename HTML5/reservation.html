@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>예약 페이지</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group select,
+        .form-group input[type="date"],
+        .form-group input[type="time"] {
+            width: 95.5%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        
+        .form-group .date-time-select {
+            display: flex;
+            align-items: center;
+        }
+        
+        .form-group .date-time-select select {
+            margin-right: 10px;
+        }
+
+        .form-group .date-input {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .form-group .date-input input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .form-group .time-input {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .form-group .time-input input[type="time"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        
+        .btn-group {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .btn-group button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-group button.primary {
+            background-color: #4caf50;
+            color: #fff;
+        }
+        
+        .btn-group button.secondary {
+            background-color: #f44336;
+            color: #fff;
+        }
+
+    </style>
+     <script>
+        function resetForm() {
+            document.getElementById("reservation-form").reset();
+        }
+    
+        function submitForm() {
+            // 입력값 가져오기
+            var name = document.getElementById("name").value;
+            var studentId = document.getElementById("studentId").value;
+            var contact = document.getElementById("contact").value;
+            var guests = document.getElementById("guests").value;
+            var date = document.getElementById("date").value;
+            var time = document.getElementById("time").value;
+    
+            // 입력값 유효성 검사
+            if (name === '' || studentId === '' || contact === '' || guests === '' || date === '' || time === '') {
+                // 입력값이 하나라도 비어있으면 메시지를 표시
+                alert("정보를 전부 입력해주세요.");
+            } else if (!/^\d+$/.test(studentId)) {
+                // 학번이 숫자로 이루어져 있지 않으면 메시지를 표시
+                alert("학번은 숫자로만 입력해주세요.");
+            } else if (!/^\d+$/.test(contact)) {
+                // 연락처가 숫자로 이루어져 있지 않으면 메시지를 표시
+                alert("연락처는 숫자로만 입력해주세요.");
+            } else {
+                // 예약 처리 로직을 추가할 수 있습니다. 예를 들어, 서버로 데이터를 전송하는 등의 동작을 수행할 수 있습니다.
+        
+                // 예약이 완료되었을 경우 팝업 메시지를 표시합니다.
+                alert("예약이 완료되었습니다 :)");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>윤채림 데이트 예약</h1>
+        <form id="reservation-form">
+            <div class="form-group">
+                <label for="name">예약자:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="studentId">학번:</label>
+                <div style="font-size: 12px; color: #888;">내 학번은 202168062</div>
+                <input type="text" id="studentId" name="studentId" placeholder="숫자만 입력해 주세요." oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+            </div>
+            <div class="form-group">
+                <label for="contact">연락처:</label>
+                <input type="text" id="contact" name="contact" placeholder="'-'없이 적어주세요." oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+            </div>
+            <div class="form-group">
+                <label for="guests">예약인원:</label>
+                <input type="number" id="guests" name="guests" required>
+            </div>
+            <div class="form-group">
+                <label for="date">날짜:</label>
+                <div class="date-input">
+                    <input type="date" id="date" name="date" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="time">시간:</label>
+                <div class="time-input">
+                    <input type="time" id="time" name="time" required>
+                </div>
+            </div>
+            <div class="btn-group">
+                <button type="submit" class="primary" onclick="submitForm()">예약</button>
+                <button type="button" class="secondary" onclick="resetForm()">취소</button>
+            </div>
+            <p id="message" style="display: none;"></p>
+        </form>
+    </div>
+</body>
+</html>
