@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>윤채림실습</title>
+        <script> 
+            sum = 0;
+            for (i=1; i <100000; i=i+1) { 
+            sum = sum + i;
+            if (sum>100000) break; 
+            } 
+            document.write("윤채림 break, continue 실습 <br> ");
+            document.write("1 부터의 N 까지의 합이 처음으로 100,000 을 넘을 때 <br> "); 
+            document.write("N 은 " + i + " 이고, 합은 " + sum + " 입니다. <hr>"); 
+        </script>
+        <script> 
+            sum=0; count=0; 
+            for (i=1; i<=100; i=i+1) { 
+            if (i%7==0) { count++;
+            continue; 
+            } 
+            sum = sum + i ;
+            } 
+            document.write("1~100 사이의 7의 배수 개수 : " + count + "<br>"); 
+            document.write("1~100 사이의 7의 배수를 제외한 합 : " + sum); 
+            </script>
+    </head>
+
+    <body>
+    </body>
+</html>
