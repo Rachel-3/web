@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <title>예약 페이지</title>
     <style>
+        /* 전체 초기화 스타일 */
         * {
             margin: 0;
             padding: 0;
         }
         
+        /* 전체 폰트 설정 */
         body {
             font-family: Arial, sans-serif;
         }
         
+        /* 컨테이너 스타일 */
         .container {
             max-width: 400px;
             margin: 50px auto;
@@ -22,21 +25,25 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
         
+        /* 제목 스타일 */
         h1 {
             text-align: center;
             margin-bottom: 20px;
         }
         
+        /* 폼 그룹 스타일 */
         .form-group {
             margin-bottom: 20px;
         }
         
+        /* 폼 그룹 레이블 스타일 */
         .form-group label {
             display: block;
             font-weight: bold;
             margin-bottom: 5px;
         }
         
+        /* 입력 필드 스타일 */
         .form-group input[type="text"],
         .form-group input[type="number"],
         .form-group select,
@@ -48,21 +55,25 @@
             border: 1px solid #ccc;
         }
         
+        /* 날짜 및 시간 선택 그룹 스타일 */
         .form-group .date-time-select {
             display: flex;
             align-items: center;
         }
         
+        /* 날짜 및 시간 선택 그룹 내부의 선택 필드 스타일 */
         .form-group .date-time-select select {
             margin-right: 10px;
         }
 
+        /* 날짜 입력 그룹 스타일 */
         .form-group .date-input {
             display: flex;
             align-items: center;
             width: 100%;
         }
 
+        /* 날짜 입력 필드 스타일 */
         .form-group .date-input input[type="date"] {
             width: 100%;
             padding: 8px;
@@ -70,12 +81,14 @@
             border: 1px solid #ccc;
         }
 
+        /* 시간 입력 그룹 스타일 */
         .form-group .time-input {
             display: flex;
             align-items: center;
             width: 100%;
         }
 
+        /* 시간 입력 필드 스타일 */
         .form-group .time-input input[type="time"] {
             width: 100%;
             padding: 8px;
@@ -83,11 +96,13 @@
             border: 1px solid #ccc;
         }
         
+        /* 버튼 그룹 스타일 */
         .btn-group {
             display: flex;
             justify-content: center;
         }
         
+        /* 버튼 스타일 */
         .btn-group button {
             margin: 0 5px;
             padding: 10px 20px;
@@ -96,11 +111,13 @@
             cursor: pointer;
         }
         
+        /* 예약 버튼 스타일 */
         .btn-group button.primary {
             background-color: #4caf50;
             color: #fff;
         }
         
+        /* 취소 버튼 스타일 */
         .btn-group button.secondary {
             background-color: #f44336;
             color: #fff;
@@ -108,10 +125,12 @@
 
     </style>
      <script>
+        /* 폼 초기화 함수 */
         function resetForm() {
             document.getElementById("reservation-form").reset();
         }
     
+        /* 폼 제출 함수 */
         function submitForm() {
             // 입력값 가져오기
             var name = document.getElementById("name").value;
@@ -144,39 +163,55 @@
     <div class="container">
         <h1>윤채림 데이트 예약</h1>
         <form id="reservation-form">
+            <!-- 예약자 입력 -->
             <div class="form-group">
                 <label for="name">예약자:</label>
                 <input type="text" id="name" name="name" required>
             </div>
+
+            <!-- 학번 입력 -->
             <div class="form-group">
                 <label for="studentId">학번:</label>
                 <div style="font-size: 12px; color: #888;">내 학번은 202168062</div>
                 <input type="text" id="studentId" name="studentId" placeholder="숫자만 입력해 주세요." oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
             </div>
+
+            <!-- 연락처 입력 -->
             <div class="form-group">
                 <label for="contact">연락처:</label>
                 <input type="text" id="contact" name="contact" placeholder="'-'없이 적어주세요." oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
             </div>
+
+            <!-- 예약인원 입력 -->
             <div class="form-group">
                 <label for="guests">예약인원:</label>
                 <input type="number" id="guests" name="guests" required>
             </div>
+
+            <!-- 날짜 입력 -->
             <div class="form-group">
                 <label for="date">날짜:</label>
                 <div class="date-input">
                     <input type="date" id="date" name="date" required>
                 </div>
             </div>
+
+            <!-- 시간 입력 -->
             <div class="form-group">
                 <label for="time">시간:</label>
                 <div class="time-input">
                     <input type="time" id="time" name="time" required>
                 </div>
             </div>
+
+            <!-- 버튼 그룹 -->
             <div class="btn-group">
+                <!-- 예약 버튼 -->
                 <button type="submit" class="primary" onclick="submitForm()">예약</button>
+                <!-- 취소 버튼 -->
                 <button type="button" class="secondary" onclick="resetForm()">취소</button>
             </div>
+            <!-- 메시지 출력 -->
             <p id="message" style="display: none;"></p>
         </form>
     </div>

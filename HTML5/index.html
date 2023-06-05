@@ -4,94 +4,119 @@
 <head>
     <meta charset="UTF-8">
     <title>윤채림 홈페이지</title>
+    <!-- CSS 스타일이 시작됩니다 -->
     <style>
         * {
             margin: 0;
             padding: 0;
         }
+        /* 위 두 줄은 브라우저 스타일링을 초기화합니다. 모든 마진과 패딩을 0으로 설정합니다. */
 
+        /* 여기부터는 각각의 HTML 태그에 적용되는 스타일을 설정합니다. */
+        /* 이 설정들은 특정 클래스나 ID가 없는 HTML 태그에 기본적으로 적용됩니다. */
+       
+        /* li 태그에 대한 스타일 설정 */
         li {
             list-style: none;
         }
 
+        /* a 태그에 대한 스타일 설정 */
         a {
             text-decoration: none;
         }
 
-        body {
-            padding-bottom: 60px;
-        }
-
+        /* html, body 태그에 대한 스타일 설정 */
         html,
         body {
             height: 100%;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+            min-height: 100%;
         }
 
+        /* body 태그에 대한 스타일 설정 */
+        body {
+            padding-bottom: 60px;
+            padding-top: 40px;
+        }
+
+        /* id가 content인 요소에 대한 스타일 설정 */
         #content {
-            min-height: calc(100vh - 40px - 60px);
+            min-height: calc(100vh - 40px - 60px); /* 본문 내용의 최소 높이를 설정합니다. 화면의 높이에서 위쪽 여백과 하단 푸터의 높이를 제외한 값으로 설정됩니다. */
             overflow: auto;
             padding-bottom: 60px;
             margin-left: 30px;
             margin-top: 50px;
         }
 
+        /* 클래스가 schedule인 요소에 대한 스타일 설정 */
         .schedule {
-            display: none;
+            display: none;  /* 팝업을 숨깁니다. */
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            top: 50%; /* 요소의 상단을 뷰포트의 50%로 설정합니다. */
+            left: 50%; /* 요소의 왼쪽을 뷰포트의 50%로 설정합니다. */
+            transform: translate(-50%, -50%); /* 요소를 수평 및 수직으로 정중앙에 위치시킵니다. */
             background-color: #fff;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 10px; /* 테두리의 꼭지점을 둥글게 만듭니다. */
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            z-index: 9999;
+            z-index: 9999; /* 요소의 쌓임 순서를 설정합니다. 다른 요소보다 위에 표시됩니다. */
         }
 
+        /* schedule 클래스 내부에 있는 close-btn 클래스에 대한 스타일 설정 */
         .schedule .close-btn {
-            position: absolute;
+            position: absolute; 
             top: 10px;
             right: 10px;
-            cursor: pointer;
+            cursor: pointer; /* 마우스 커서를 가리키는 손가락 모양으로 변경합니다. */
             font-size: 20px;
             font-weight: bold;
             color: #555;
         }
 
+        /* schedule 클래스 내부에 있는 table 태그에 대한 스타일 설정 */
         .schedule table {
             width: 100%;
-            border-collapse: collapse;
+            border-collapse: collapse; /* 테이블 셀의 경계를 합쳐 하나의 단일 경계로 표시합니다. */
         }
 
+        /* schedule 클래스 내부에 있는 caption 태그에 대한 스타일 설정 */
         .schedule caption {
             font-size: 18px;
             font-weight: bold;
             margin-bottom: 10px;
         }
 
+        /* schedule 클래스 내부에 있는 td 태그에 대한 스타일 설정 */
         .schedule td {
             padding: 10px;
             text-align: center;
             border: 1px solid #ccc;
         }
 
+        /* schedule 클래스 내부에 있는 close-btn 클래스에 호버 효과를 추가하는 스타일 설정 */
         .schedule .close-btn:hover {
             color: #ff0000;
         }
 
+        /* gnb 클래스에 대한 스타일 설정 */
         .gnb {
             position: fixed;
             top: 0;
             width: 100%;
             background: #7700ff;
             box-shadow: 2px 2px 5px #a0a0a0, 0 0 17px #a0a0a0, 0 0 10px #a0a0a0;
-            z-index: 9999;
+            z-index: 9999; /* 요소의 쌓임 순서를 설정합니다. 다른 요소보다 위에 표시됩니다. */
         }
 
+        /* gnb 클래스 내부의 li 태그에 대한 스타일 설정 */
         .gnb li {
             display: inline-block;
         }
 
+        /* gnb 클래스 내부의 li 태그 내부의 a 태그에 대한 스타일 설정 */
         .gnb li a {
             display: block;
             padding: 20px 40px;
@@ -99,10 +124,12 @@
             font-weight: 700;
         }
 
+        /* gnb 클래스 내부의 li 태그에 호버 효과를 추가하는 스타일 설정 */
         .gnb li:hover {
             background: #5e00ca;
         }
 
+        /* dapth1 클래스에 대한 스타일 설정 */
         .dapth1 {
             position: absolute;
             display: inline-block;
@@ -113,6 +140,7 @@
 
         }
 
+        /* dapth2 클래스에 대한 스타일 설정 */
         .dapth2 {
             position: absolute;
             display: inline-block;
@@ -122,6 +150,7 @@
             display: none;
         }
 
+        /* dapth3 클래스에 대한 스타일 설정 */
         .dapth3 {
             position: absolute;
             top: 0;
@@ -134,6 +163,7 @@
             display: none;
         }
 
+        /* dapth4 클래스에 대한 스타일 설정 */
         .dapth4 {
             position: absolute;
             display: inline-block;
@@ -143,62 +173,75 @@
             display: none;
         }
 
+        /* dapth1 클래스 내부의 li 태그에 대한 스타일 설정 */
         .dapth1 li {
             border-top: 1px solid lightgray;
             border-bottom: 1px solid lightgray;
             width: 200px;
         }
 
+        /* dapth2 클래스 내부의 li 태그에 대한 스타일 설정 */
         .dapth2 li {
             border-top: 1px solid lightgray;
             border-bottom: 1px solid lightgray;
             width: 200px;
         }
 
+        /* dapth1 클래스 내부의 li 태그에 호버 효과를 추가하는 스타일 설정 */
         .dapth1 li:hover {
             background: #777;
             width: 200px
         }
 
+        /* dapth2 클래스 내부의 li 태그에 호버 효과를 추가하는 스타일 설정 */
         .dapth2 li:hover {
             background: #777;
             width: 200px
         }
 
+        /* dapth3 클래스 내부의 li 태그에 호버 효과를 추가하는 스타일 설정 */
         .dapth3 li:hover {
             background: #777;
             width: 200px
         }
 
+        /* dapth4 클래스 내부의 li 태그에 호버 효과를 추가하는 스타일 설정 */
         .dapth4 li:hover {
             background: #777;
             width: 200px
         }
 
+        /* gnb2 클래스에 호버 효과를 추가하고 dapth1 클래스를 보여주는 스타일 설정 */
         .gnb2:hover .dapth1 {
             display: block;
         }
 
+        /* gnb3 클래스에 호버 효과를 추가하고 dapth2 클래스를 보여주는 스타일 설정 */
         .gnb3:hover .dapth2 {
             display: block;
         }
 
+        /* gnb4 클래스에 호버 효과를 추가하고 dapth4 클래스를 보여주는 스타일 설정 */
         .gnb4:hover .dapth4 {
             display: block;
         }
 
+        /* web 클래스에 호버 효과를 추가하고 dapth3 클래스를 보여주는 스타일 설정 */
         .web:hover .dapth3 {
             display: block;
         }
 
+        /* dapth1 클래스 내부의 li 태그에 대한 스타일 설정 */
         .dapth1>li {
             position: relative;
         }
 
+        /* dapth1 클래스 내부의 li 태그에 호버 효과를 추가하고 dapth3 클래스를 보여주는 스타일 설정 */
         .dapth1>li:hover .dapth3 {
             display: block;
         }
 
+         /* thing ID에 대한 스타일 설정 */
         #thing {
             width: 32px;
             height: 32px;
@@ -206,36 +249,28 @@
             background: tomato;
         }
 
-        html,
-        body {
-            width: 100%;
-            padding: 0;
-            margin: 0;
-            overflow-x: hidden;
-            min-height: 100%;
-        }
-
-        body {
-            padding-top: 40px;
-        }
-
+        /* skrollable 클래스에 대한 스타일 설정 */
         .skrollable {
             position: fixed;
             z-index: 100;
         }
 
+        /* skrollr-mobile 클래스에 속한 skrollable 클래스에 대한 스타일 설정 */
         .skrollr-mobile .skrollable {
             position: absolute;
         }
 
+        /* skrollable 클래스 내부의 skrollable 클래스에 대한 스타일 설정 */
         .skrollable .skrollable {
             position: absolute;
         }
 
+        /* skrollable 클래스 내부의 skrollable 클래스 내부의 skrollable 클래스에 대한 스타일 설정 */
         .skrollable .skrollable .skrollable {
             position: static;
         }
         
+        /* button 클래스에 대한 스타일 설정 */
         .button {
             position: fixed;
             background-color: #7700ff;
@@ -243,25 +278,23 @@
             font-weight: 600;
             bottom: 50%;
             right: 5%;
-            transform: translate(50%, 50%);
+            transform: translate(50%, 50%); /* 요소를 50%만큼 수평으로 이동하고 50%만큼 수직으로 이동시킵니다. */
             padding: 12px;
             text-align: center;
             height: 85px;
             width: 50px;
-            border-radius: 8%;
+            border-radius: 8%; /* 테두리의 모서리를 8%로 둥글게 만듭니다. */
             box-shadow: 1px 1px 3px #b5b5b5, 0 0 10px #b5b5b5, 0 0 10px #b5b5b5;
-            
+            cursor: pointer;  /* 마우스 커서를 포인터로 변경하여 클릭 가능한 요소임을 나타냅니다. */
         }
 
+        /* .button li 선택자에 대한 CSS 스타일 */
         .button li {
             margin: 10px 0;
             margin-top: 0px;
         }
 
-
-
-        
-
+        /* .footer-container 클래스에 대한 CSS 스타일 */
         .footer-container {
             position: fixed;
             bottom: 0;
@@ -272,73 +305,83 @@
             display: none;
         }
     </style>
+
+     <!-- 자바스크립트 코드가 시작됩니다. 이 코드들은 화면 스크롤이나 클릭 이벤트에 따라 동작합니다. -->
     <script>
-        window.onload = function () {
-            var schoolMenu = document.querySelector(".dapth4");
-            var scheduleTable = document.querySelector(".schedule");
-            var closeBtn = document.querySelector(".schedule .close-btn");
-
-            schoolMenu.addEventListener("click", function (event) {
-                event.preventDefault();
-                scheduleTable.style.display = "block";
-            });
-
-            closeBtn.addEventListener("click", function () {
-                scheduleTable.style.display = "none";
-            });
-        };
-
+        // 스크롤 이벤트 리스너를 추가합니다.
         window.addEventListener('scroll', function () {
-            var footer = document.querySelector('.footer-container');
-            var content = document.getElementById('content');
-            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            // 스크롤이 아래로 내려갈 때마다 실행되는 코드입니다.
+            var footer = document.querySelector('.footer-container'); // footer-container 클래스 요소를 찾습니다.
+            var content = document.getElementById('content'); // content라는 id를 가진 요소를 찾습니다.
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop; // 페이지의 상단으로부터 스크롤한 거리를 가져옵니다.
+            var windowHeight = window.innerHeight || document.documentElement.clientHeight; // 브라우저 창의 높이를 가져옵니다.
             var documentHeight = Math.max(
                 document.body.scrollHeight, document.documentElement.scrollHeight,
                 document.body.offsetHeight, document.documentElement.offsetHeight,
                 document.body.clientHeight, document.documentElement.clientHeight
-            );
+            ); // 문서 전체의 높이를 계산합니다.
 
+            // 스크롤이 페이지 하단에 도달하면 footer를 표시하고, content의 아래쪽 여백을 추가합니다.
             if (scrollTop + windowHeight >= documentHeight) {
-                footer.style.display = 'block';
-                content.style.paddingBottom = '85px'; // Adjust padding to accommodate the footer
+                footer.style.display = 'block'; // footer를 표시합니다.
+                content.style.paddingBottom = '85px'; // content의 아래쪽 여백을 85px로 설정합니다.
             } else {
-                footer.style.display = 'none';
-                content.style.paddingBottom = '0';
+                footer.style.display = 'none'; // footer를 숨깁니다.
+                content.style.paddingBottom = '0'; // content의 아래쪽 여백을 제거합니다.
             }
         });
 
-        window.onload = function() {
-        var button1 = document.querySelector('.button1');
-        var button2 = document.querySelector('.button2');
-        var button3 = document.querySelector('.button3');
+        // 페이지가 로드되면 실행되는 함수입니다.
+        window.onload = function () {
+             // 페이지 로딩이 완료되면 코드를 실행합니다.
+            var schoolMenu = document.querySelector(".dapth4"); // dapth4 클래스 요소를 찾습니다.
+            var scheduleTable = document.querySelector(".schedule"); // schedule 클래스 요소를 찾습니다.
+            var closeBtn = document.querySelector(".schedule .close-btn"); // schedule 클래스 내부의 close-btn 클래스 요소를 찾습니다.
+            var button1 = document.querySelector('.button1'); // button1 클래스 요소를 찾습니다.
+            var button2 = document.querySelector('.button2'); // button2 클래스 요소를 찾습니다.
+            var button3 = document.querySelector('.button3'); // button3 클래스 요소를 찾습니다.
 
-        button1.addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+            // schoolMenu를 클릭하면 scheduleTable을 보여줍니다.
+            schoolMenu.addEventListener("click", function (event) {
+                event.preventDefault(); // 기본 동작을 취소합니다.
+                scheduleTable.style.display = "block"; // scheduleTable을 보여줍니다.
+            });
 
-        button2.addEventListener('click', function() {
-            var windowHeight = window.innerHeight || document.documentElement.clientHeight;
-            var scrollToPosition = 10829 / 2;
-            window.scrollTo({ top: scrollToPosition, behavior: 'smooth' });
-        });
+            // closeBtn을 클릭하면 scheduleTable을 숨깁니다.
+            closeBtn.addEventListener("click", function () {
+                scheduleTable.style.display = "none"; // scheduleTable을 숨깁니다.
+            });
 
-        button3.addEventListener('click', function() {
-            var documentHeight = Math.max(
-            document.body.scrollHeight, document.documentElement.scrollHeight,
-            document.body.offsetHeight, document.documentElement.offsetHeight,
-            document.body.clientHeight, document.documentElement.clientHeight
-            );
-            window.scrollTo({ top: documentHeight, behavior: 'smooth' });
-        });
+            // button1을 클릭하면 페이지를 맨 위로 스크롤합니다.
+            button1.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' }); // 맨 위로 스크롤하는 애니메이션 효과를 사용하여 스크롤합니다.
+            });
+
+            // button2를 클릭하면 페이지를 가운데로 스크롤합니다.
+            button2.addEventListener('click', function() {
+                var windowHeight = window.innerHeight || document.documentElement.clientHeight; // 브라우저 창의 높이를 가져옵니다.
+                var scrollToPosition = 10829 / 2; // 스크롤할 위치를 계산합니다. (10829은 임의의 값입니다.)
+                window.scrollTo({ top: scrollToPosition, behavior: 'smooth' }); // 스크롤 애니메이션 효과를 사용하여 scrollToPosition 위치로 스크롤합니다.
+            });
+
+            // button3을 클릭하면 페이지를 맨 아래로 스크롤합니다.
+            button3.addEventListener('click', function() {
+                var documentHeight = Math.max(
+                document.body.scrollHeight, document.documentElement.scrollHeight,
+                document.body.offsetHeight, document.documentElement.offsetHeight,
+                document.body.clientHeight, document.documentElement.clientHeight
+                ); // 문서 전체의 높이를 계산합니다.
+                window.scrollTo({ top: documentHeight, behavior: 'smooth' }); // 스크롤 애니메이션 효과를 사용하여 페이지 맨 아래로 스크롤합니다.
+            });
         };
-
     </script>
 </head>
 
+<!-- 웹사이트의 본문이 시작되는 부분입니다 -->
 <body bgcolor="#dadeeb">
-
+    <!-- 상단 메뉴 바입니다. -->
     <ul class="gnb">
+        <!-- 각 메뉴의 항목입니다. -->
         <li class="gnb1"><a href="">Home</a></li>
         <li class="gnb2"><a href="">Tutorials</a>
             <ul class="dapth1">
@@ -365,22 +408,33 @@
         </li>
     </ul>
 
+    <!-- 본문 내용이 시작되는 부분입니다. -->
     <div id="content">
         <h1>Welcome to Rachel's Website!</h1>
         <p>This is a sample website for demonstration purposes.</p>
+        <p>안녕. 난 윤채림. 학번은 202168062 이야</p>
+        <p>상단 메뉴 School - Schedule로 들어가면 시간표(Table)이 뜹니다.</p>
+        <p>오른쪽 수직 메뉴를 클릭하면 화면이 이동됩니다.</p>
+        <p>스크롤에 따라 원이 이동됩니다.</p>
     </div>
 
+    <!-- 화면 우측에 고정된 버튼입니다. -->
     <ul class="button">
         <li class="button1">0%</li>
         <li class="button2">50%</li>
         <li class="button3">100%</li>
     </ul>
 
+    <!-- 애니메이션을 적용할 HTML 요소입니다. -->
     <div id="thing" data-0="left[cos]:10%;top[sin]:10%;" data-10000="left:90%;top:90%;"></div>
 
+    <!-- 팝업 형태로 나타나는 스케줄 표입니다. -->
     <div class="schedule">
+        <!-- 팝업을 닫기 위한 버튼입니다. -->
         <span class="close-btn">X</span>
+        <!-- 시간표 데이터가 담긴 테이블입니다. -->
         <table border="1">
+            <!-- 테이블의 내용입니다. -->
             <caption>수업 시간표</caption>
             <tr>
                 <td>시 간</td>
@@ -420,28 +474,30 @@
         </table>
     </div>
 
+    <!-- 화면 하단에 고정된 푸터입니다. -->
     <div class="footer-container">
         <footer>
-            <p>&copy; 2023 Rachel's Portfolio. All rights reserved.</p>
+            <p>&copy; 2023 Rachel's Portfolio. All rights reserved.</p> <!-- 저작권 정보 -->
         </footer>
     </div>
 
+    <!-- 스크롤이 아래로 내려갈 때 특정 HTML 요소에 애니메이션을 적용하기 위해 사용하는 외부 자바스크립트 라이브러리입니다. -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+    <!-- 스크롤에 따라 애니메이션을 적용하는 코드입니다. -->
     <script type="text/javascript">
+        // skrollr 라이브러리를 초기화합니다.
         skrollr.init({
             easing: {
+                // sin 함수는 스크롤 위치에 따라 사인(sin) 함수를 적용하여 값을 반환합니다.
                 sin: function (p) {
                     return (Math.sin(p * Math.PI * 2 - Math.PI / 2) + 1) / 2;
                 },
+                // cos 함수는 스크롤 위치에 따라 코사인(cos) 함수를 적용하여 값을 반환합니다.
                 cos: function (p) {
                     return (Math.cos(p * Math.PI * 2 - Math.PI / 2) + 1) / 2;
                 },
             },
         });
     </script>
-
-    
-
 </body>
-
 </html>
