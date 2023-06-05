@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>윤채림실습</title>
+        <script> 
+            document.write("윤채림 자바스크립트의 배열 특성 실습 <br><br> ");
+            var student=[88, 92, 76];
+            document.write("<hr> 배열 student 크기 : " + student.length + "<br>"); 
+            for (i=0; i<student.length; i++) {
+            document.write("student[" +i + "] = "); 
+            document.write(student[i] + "<br>"); 
+            } 
+            student[6]= 84; // 동적 배열크기 확장
+            student[4]= "결석"; 
+            document.write("<hr> 배열 student 크기 : " + student.length + "<br>"); 
+            for (i=0; i<student.length; i++) {
+            document.write("student[" +i + "] = "); 
+            document.write(student[i] + "<br>"); 
+            } 
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
