@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>윤채림실습</title>
+        <script> 
+            document.write("윤채림 배열 참조 실습 <br> ");
+
+            var months = [1,2,3,4,5,6,7,8,9,10,11,12]; 
+            var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]; 
+            var season = ["봄", "여름", "가을", "겨울"]; 
+            document.write("월 : " + months + "<br>"); // 배열명 참조
+            document.write("요일 : " + days + "<br>"); // 배열명 참조
+            document.write("<hr>" + season.length + " 계절 종류 : "); 
+            for (i=0; i<season.length; i++) { 
+            document.write(season[i]+ ' '); // 배열원소 참조
+            } 
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
