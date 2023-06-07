@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>윤채림실습</title>
+        <script> 
+            document.write("윤채림 웹프로그래밍 실습 <br><br> ");
+            var score=new Array(), season=new Array("봄","여름","가을","겨울"); 
+            var subject="java"; 
+            score["web"] = 75; score[subject]=92; score['project']=85; 
+            // 배열 score 출력
+            document.write("<hr>1. score (키인덱스 사용) 출력 <br>"); 
+            document.write("(1) 배열명 출력: " + score + "<br>"); 
+            document.write("(2) 배열크기: " + score.length + "<br>"); 
+            document.write("(3) for문 출력: "); 
+            for (i=0 ; i<score.length; i++) document.write(score[i] + " "); 
+            document.write("<br>(4) 배열원소 출력: "); 
+            document.write( score['web'] + ", " + score[subject] ); 
+            document.write(", " + score['project'] + "<hr>"); 
+            season["mar"]="춘곤기"; season["sep"]="환절기"; 
+            document.write("2. season (정수/키인덱스 혼용) 출력<br>"); 
+            document.write("(1) 배열명 출력: " + season + "<br>"); 
+            document.write("(2) 배열크기: " + season.length + "<br>"); 
+            document.write("(3) for문 출력: "); 
+            for (i=0 ; i<season.length; i++) document.write(season[i]+" "); 
+            document.write("<br>(4) 배열원소 출력: "); 
+            document.write(season[0] + ", " + season['mar'] + ", " + season[1] + ", "); 
+            document.write(season[2] + ", " + season['sep'] + ", " + season[3]);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
