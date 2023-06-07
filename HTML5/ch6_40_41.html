@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>윤채림실습</title>
+        <script> 
+            document.write("윤채림 웹프로그래밍 실습 <br><br> ");
+            var season=new Array("봄","여름","가을","겨울"); 
+            season["mar"]="춘곤기"; season["sep"]="환절기"; 
+            document.write("(1) for문 출력: "); 
+            for (i=0 ; i<season.length; i++)
+                document.write(season[i]+" "); 
+            document.write("<hr>"); 
+            document.write("(2) for-in 문 출력: "); 
+            for ( var key in season) 
+                document.write(season[key]+" "); 
+        </script>
+            <hr>
+        <script>
+            var score = [0, 10, 20, 30, 40]; 
+            score[0] = 5; 
+            score["1"] = 15;
+            score["two"] = 25;
+            score[7]= 55;
+            for (i=0; i<score.length; i++) { 
+                document.write("score[" + i + "]: " + score[i] + "<br>"); 
+            } 
+            document.write("<hr>"); 
+            for (var key in score) { 
+                document.write("score[" + key + "]: " + score[key] + "<br>"); 
+            }
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
