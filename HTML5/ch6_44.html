@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>윤채림실습</title>
+        <script> 
+            document.write("윤채림 자바스크립트 실습 <br><br> ");
+            var a="globalA", b="globalB", c="globalC"; 
+            function f1() { 
+                var b="localB"; 
+                var d="localD"; 
+                document.write("함수 f1() 내부에서 출력<br>"); 
+                document.write("a=" + a + "<br>"); 
+                document.write("b=" + b + "<br>"); 
+                document.write("this.b=" + this.b + "<br>"); 
+                document.write("c=" + c + "<br>"); 
+                document.write("d=" + d + "<br><hr>"); 
+            } 
+            f1(); 
+            document.write("함수 f1() 외부에서 출력<br>"); 
+            document.write("a=" + a + "<br>"); 
+            document.write("b=" + b + "<br>"); 
+            document.write("this.b=" + this.b + "<br>"); 
+            document.write("c=" + c + "<br>"); 
+            document.write("d=" + d + "<br><hr>"); 
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
