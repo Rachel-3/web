@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>윤채림실습</title>
+        <script>
+            document.write("윤채림 자바스크립트 실습 <br><br> ");
+
+            function f1(f2, n) { 
+            document.write('콜백함수를 '+n+'번 호출함!' + '<br>'); 
+            for ( i=0; i<n; i++) f2(); ;
+            }
+
+            var f3 = function () { 
+            document.write('Welcome to HTML5 ! <br>'); 
+            }
+
+            f1(f3, 5); // ①
+            document.write('<hr>'); 
+            f1( function() { // ②
+            document.write('Welcome to Javascript ! <br>');
+            } , 5);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
