@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>윤채림실습</title>
+        <script>
+            document.write("윤채림 자바스크립트 실습 <br><br> ");
+
+            var x = [ 80, 50, 40, 30, 60, 10, 90, 70, 20]; 
+
+            document.write("(0) 배열 x의 크기(원소개수) : " + x.length + "<br>");
+            document.write("(1) x의 출력(1) : " + x + "<br>"); 
+            document.write("(2) x의 오름차순 정렬 : " + x.sort() + "<br>"); 
+            document.write("(3) x의 출력(2) : " + x + "<br>"); 
+            document.write("(4) x의 내림차순 출력 : " + x.reverse() + "<br>"); 
+            subX = x.slice(2,5); 
+            document.write("(5) subX의 출력 : " + subX + "<hr>"); 
+
+            var season1 = [ "봄", "여름", "가을", "겨울" ];
+            var season2 = [ "춘곤기", "환절기" ];
+            
+            seasons = season1.join(" -> "); 
+            season3 = season1.concat(season2); 
+            season4 = season2.concat(season1); 
+            document.write("(6) 계절 리스트(1) : " + season3 + "<br>"); 
+            document.write("(7) 계절 리스트(2) : " + season4 + "<br>"); 
+            document.write("(8) 계절의 변화 : " + seasons + "<br>"); 
+            document.write("(9) '가을' 의 배열 인덱스 : " + season1.indexOf('가을') + "<br>"); 
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
