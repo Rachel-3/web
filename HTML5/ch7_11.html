@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>윤채림실습</title>
+        <script>
+            document.write("윤채림 자바스크립트 실습 <br><br> ");
+
+            function thinkingStart() { 
+            document.images[0].style.visibility="visible"; 
+            setTimeout(myTimer, 5000);
+            } 
+
+            function myTimer() { 
+            document.images[0].style.visibility= "hidden"; 
+            document.getElementById("noti").innerHTML = "30초가 경과했습니다!" ; 
+            } 
+        </script>
+    </head>
+    <body>
+        <h3> setTimeout() 메서드 1</h3><hr> 
+        생각하는 시간(30초) 
+        <button onclick="thinkingStart();">Start</button><hr> 
+        <img id="img1" style="visibility:hidden", src="thinking.png" width=200 height=250 /> 
+        <p id="noti"></p> 
+    </body>
+</html>
