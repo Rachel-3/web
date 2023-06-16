@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>윤채림실습</title>
+        <script>
+            document.write("윤채림 자바스크립트 실습 <br><br> ");
+
+            var obj = new Object(); 
+            obj.name = "윤채림"; obj.major = "컴퓨터공학"; 
+
+            document.write("obj의 constructor: "); 
+            document.write(obj.constructor + "<br>"); 
+            document.write("obj의 toString(): "); 
+            document.write(obj.toString()); // 상속 메서드
+            document.write("<br>"); 
+
+            // toString() 재정의
+            obj.toString = function() { 
+            document.write("{ name: " + this.name + ", major: " + this.major + " }<br>"); 
+            }; 
+
+            document.write("obj의 toString(): "); 
+            document.write(obj.toString()); // 재정의 메서드
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
