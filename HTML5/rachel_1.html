@@ -27,7 +27,7 @@
 
   </style>
   <script>
-   window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", () => {
   const component = document.getElementById("component");
   const dropzone = document.getElementById("dropzone");
 
@@ -43,11 +43,9 @@
     event.preventDefault();
     const componentId = event.dataTransfer.getData("text/plain");
     const component = document.getElementById(componentId);
-    const componentClone = component.cloneNode(true);
-    dropzone.appendChild(componentClone);
+    dropzone.appendChild(component);
   });
 });
-
 
   </script>
 </head>
